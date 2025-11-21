@@ -59,7 +59,7 @@ jobs:
         context: ./stack
         file: ./stack/Dockerfile
         push: true
-        tags: ghcr.io/joelo15/joelrepomakefile:latest
+        tags: ghcr.io/bcspndamianc/prueba:latest
 
     - name: 🧾 Mostrar variables básicas (solo locales, no secretos)
       run: |
@@ -103,16 +103,16 @@ jobs:
           cd ~/deploy1/stack
 
           echo "Descargando la imagen del GitHub Container Registry"
-          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u joelo15 --password-stdin
+          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u bcspndamianc --password-stdin
           docker pull ghcr.io/bcspndamianc/prueba:latest
 
           echo "Deteniendo los servicios (stack)"
-          docker stack rm pgjoelo || true
+          docker stack rm p || true
 
           echo "Esperar 20 segundos..."
           sleep 20
 
           echo "Desplegando el stack o servicios"
-          docker stack deploy -c stack.yml pgjoelo
+          docker stack deploy -c stack.yml  pgdamian
 
           docker ps
