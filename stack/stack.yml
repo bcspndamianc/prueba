@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   pgdamian:
-    image: ghcr.io/bcspndamian/prueba:latest
+    image:  ghcr.io/bcspndamianc/prueba:latest
     
     deploy:
       replicas: 1
