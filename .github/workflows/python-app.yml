@@ -104,7 +104,7 @@ jobs:
 
           echo "Descargando la imagen del GitHub Container Registry"
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u joelo15 --password-stdin
-          docker pull ghcr.io/joelo15/joelrepomakefile:latest
+          docker pull ghcr.io/bcspndamianc/prueba:latest
 
           echo "Deteniendo los servicios (stack)"
           docker stack rm pgjoelo || true
